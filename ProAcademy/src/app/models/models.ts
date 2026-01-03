@@ -3,5 +3,6 @@ export interface Product{
     price : number,
     color : string,
     discount : number,
-    inStock : 2
+    inStock : number,
+    image : string
 }
