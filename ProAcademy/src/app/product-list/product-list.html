@@ -20,6 +20,12 @@
   </div> -->
 
   <app-search></app-search>
+  @for (item of listOfString(); track item) {
+    <div>
+      {{item}}
+    </div>
+  }
+   
 </div>
 
 <!-- EVENT BINDING -->

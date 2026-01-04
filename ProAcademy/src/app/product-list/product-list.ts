@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { Product } from '../models/models';
 import { Search } from "./search/search";
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-product-list',
-  imports: [Search],
+  imports: [Search, NgFor],
   templateUrl: './product-list.html',
   styleUrl: './product-list.scss',
 })
@@ -42,4 +43,6 @@ export class ProductList {
   public increaseCount(){
     this.addToCart++
   }
+
+  listOfString = signal<string[]>(['Rahul', 'Prasad', 'Virat', 'kholi'])
 }
