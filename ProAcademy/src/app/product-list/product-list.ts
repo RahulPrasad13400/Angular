@@ -18,13 +18,27 @@ export class ProductList {
     price: 999,
     color: 'Red',
     discount: 25,
-    inStock : 0,
-    image : "assets/images/iPhone14.webp"
+    inStock: 0,
+    image: 'assets/images/iPhone14.webp',
   };
 
   getDiscountedPrice(): number {
     return this.product.price - (this.product.price * this.product.discount) / 100;
   }
 
-  name : string = "John Doe"
+  // EVENT BINDING
+  // name : string = "John Doe"
+  // public onNameChange(event : any){
+  //   this.name = event.target.value
+  // }
+
+  addToCart: number = 0;
+  public decreaseCount() {
+    if(this.addToCart > 0){
+      this.addToCart--
+    }
+  }
+  public increaseCount(){
+    this.addToCart++
+  }
 }
