@@ -4,7 +4,7 @@
 <p>Discounted Price : {{discount}}</p> -->
 
 <div class="ekart-product-container">
-  <img [src]="product.image" [alt]="product.name" />
+  <!-- <img [src]="product.image" [alt]="product.name" />
   <p>name : {{ product.name }}</p>
   <p>price : {{ '$' + product.price }}</p>
   <p>color : {{ product.color }}</p>
@@ -17,7 +17,9 @@
     <button class="button-quantity" (click)="decreaseCount()">-</button>
     <span>{{ addToCart }}</span>
     <button class="button-quantity" (click)="increaseCount()">+</button>
-  </div>
+  </div> -->
+
+  <app-search></app-search>
 </div>
 
 <!-- EVENT BINDING -->
