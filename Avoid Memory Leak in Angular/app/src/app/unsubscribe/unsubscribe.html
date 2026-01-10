@@ -1,0 +1,5 @@
+<ul>
+  @for (item of postList$ | async ; track $index) {
+  <li>{{item.title}}</li>
+  }
+</ul>
