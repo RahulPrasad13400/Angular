@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { filter, from, interval, map, of, tap } from 'rxjs';
+import { filter, from, interval, map, of, take, tap } from 'rxjs';
 
 @Component({
   selector: 'app-sample',
@@ -47,17 +47,28 @@ export class Sample {
   //     .subscribe((res) => console.log(res));
   // }
 
-  http = inject(HttpClient);
+  // http = inject(HttpClient);
 
-  timeInterval = interval(1000);
+  // timeInterval = interval(1000);
 
-  searchControl = new FormControl();
+  // searchControl = new FormControl();
 
-  constructor() {
-    this.searchControl.valueChanges
-      .pipe(filter((searchText) => searchText.length === 3))
-      .subscribe((res) => {
-        console.log(res);
-      });
+  // constructor() {
+  //   this.searchControl.valueChanges
+  //     .pipe(filter((searchText) => searchText.length >= 3))
+  //     .subscribe((res) => {
+  //       console.log(res);
+  //     });
+  // }
+
+
+  timeInterval = interval(1000)
+  
+  constructor(){
+    this.timeInterval.pipe(
+      take(6) // limit the observable to emit only the first 6 values.
+    ).subscribe((res : number)=> {
+      console.log(res)
+    })
   }
 }
